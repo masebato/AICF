@@ -1,4 +1,4 @@
-﻿using System;
+﻿    using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -29,10 +29,18 @@ namespace AICF.Modelos
         {
           return con.OperarDatos("insert into estudiante value('"+idPersona+"','"+idCurso+"')");
         }
+        public bool InsertardDocentecurso( int idPersona, int idCurso)
+        {
+            return con.OperarDatos("insert into docente values ('"+idPersona+ "'); update curso set DOCENTE_idPERSONA ='" + idPersona + "' where idCURSO ='" + idCURSO + "' ");
+        }   
 
         public bool CrearCurso(Curso obj_curso)
         {
             return con.OperarDatos("insert into curso (nombCURSO, horasCURSO,  jornCURSO, cupoCURSO, descripcionCURSO) values ('"+obj_curso.nombCURSO+"','"+obj_curso.horasCURSO+"','"+obj_curso.jornCURSO+"','"+obj_curso.cupoCURSO+"','"+obj_curso.descripcionCURSO+"') ");
+        }
+        public DataTable ConsultarCursoSinDocente()
+        {
+            return con.ConsultarDatos("select nombCURSO, jornCURSO, idCURSO from curso where curso.DOCENTE_idPERSONA is null;");
         }
     }
     

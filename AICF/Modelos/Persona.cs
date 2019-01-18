@@ -35,6 +35,15 @@ namespace AICF.Modelos
             return con.ConsultarDatos("SELECT idPERSONA, CONCAT (nombPERSONA,' ', apelPERSONA) as nombres, docuPERSONA from persona where persona.docuPERSONA='"+documento+"'");
         }
 
+        public DataTable ConsultarDocente(string documento)
+        {
+            return con.ConsultarDatos("select CONCAT(persona.nombPERSONA,' ', persona.apelPERSONA) as nombre, persona.idPERSONA as idpersona, persona.docuPERSONA as documento from docente inner join persona on docente.idPERSONA = persona.idPERSONA where persona.docuPERSONA='" + documento+"';");
+        }
+
+        public bool CrearDocente(string idPersona)
+        {
+            return con.OperarDatos("insert into docente values ('" + idPersona + "');");
+        }
 
     }
 }

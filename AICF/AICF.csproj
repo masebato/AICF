@@ -107,8 +107,11 @@
     <Content Include="views\assets\js\plugins\bootstrap-notify.js" />
     <Content Include="views\assets\js\plugins\chartjs.min.js" />
     <Content Include="views\assets\js\plugins\perfect-scrollbar.jquery.min.js" />
+    <Content Include="views\ConsultarCalificaciones.aspx" />
+    <Content Include="views\ConsultarCurso.aspx" />
     <Content Include="views\crearCurso.aspx" />
-    <Content Include="views\CrearEstudiante.aspx" />
+    <Content Include="views\CrearDocente.aspx" />
+    <Content Include="views\CrearPersona.aspx" />
     <Content Include="views\Inicio.aspx" />
     <Content Include="views\Login.aspx" />
     <Content Include="Web.config" />
@@ -139,6 +142,20 @@
     <Compile Include="views\asignarEstudiantes.aspx.designer.cs">
       <DependentUpon>asignarEstudiantes.aspx</DependentUpon>
     </Compile>
+    <Compile Include="views\ConsultarCalificaciones.aspx.cs">
+      <DependentUpon>ConsultarCalificaciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="views\ConsultarCalificaciones.aspx.designer.cs">
+      <DependentUpon>ConsultarCalificaciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="views\ConsultarCurso.aspx.cs">
+      <DependentUpon>ConsultarCurso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="views\ConsultarCurso.aspx.designer.cs">
+      <DependentUpon>ConsultarCurso.aspx</DependentUpon>
+    </Compile>
     <Compile Include="views\crearCurso.aspx.cs">
       <DependentUpon>crearCurso.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -146,12 +163,19 @@
     <Compile Include="views\crearCurso.aspx.designer.cs">
       <DependentUpon>crearCurso.aspx</DependentUpon>
     </Compile>
-    <Compile Include="views\CrearEstudiante.aspx.cs">
-      <DependentUpon>CrearEstudiante.aspx</DependentUpon>
+    <Compile Include="views\CrearDocente.aspx.cs">
+      <DependentUpon>CrearDocente.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="views\CrearEstudiante.aspx.designer.cs">
-      <DependentUpon>CrearEstudiante.aspx</DependentUpon>
+    <Compile Include="views\CrearDocente.aspx.designer.cs">
+      <DependentUpon>CrearDocente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="views\CrearPersona.aspx.cs">
+      <DependentUpon>CrearPersona.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="views\CrearPersona.aspx.designer.cs">
+      <DependentUpon>CrearPersona.aspx</DependentUpon>
     </Compile>
     <Compile Include="views\Inicio.aspx.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>

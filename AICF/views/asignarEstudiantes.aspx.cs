@@ -32,7 +32,7 @@ namespace AICF.views
             catch (Exception)
             {
 
-                throw;
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "pop", "swal('NO SE ENCUENTRA REGISTRO DE ESTUDIANTE', '', 'error');", true);
             }
 
         }
@@ -50,8 +50,8 @@ namespace AICF.views
             }
             catch (Exception)
             {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "pop", "swal('OCURRIO UN ERROR', '', 'error');", true);
 
-              
             }
                       
         }

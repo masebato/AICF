@@ -10,51 +10,60 @@
 namespace AICF.views {
     
     
-    public partial class AsignarDocente {
+    public partial class CrearPersona {
         
         /// <summary>
-        /// Control NumeroDocumentoDocente.
+        /// Control NombreEstudiante.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox NumeroDocumentoDocente;
+        protected global::System.Web.UI.WebControls.TextBox NombreEstudiante;
         
         /// <summary>
-        /// Control NombreDocente.
+        /// Control ApellidoEstudiante.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label NombreDocente;
+        protected global::System.Web.UI.WebControls.TextBox ApellidoEstudiante;
         
         /// <summary>
-        /// Control DocumentoDocente.
+        /// Control Identificacion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label DocumentoDocente;
+        protected global::System.Web.UI.WebControls.TextBox Identificacion;
         
         /// <summary>
-        /// Control idDocente.
+        /// Control TextBox1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label idDocente;
+        protected global::System.Web.UI.WebControls.TextBox TextBox1;
         
         /// <summary>
-        /// Control listaDeCursos.
+        /// Control correo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView listaDeCursos;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl correo;
+        
+        /// <summary>
+        /// Control telefonoest.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox telefonoest;
     }
 }

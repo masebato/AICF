@@ -2,6 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.28.5/sweetalert2.all.js"></script>
     <div class="content">
         <div class="row">
             <div class="col-md-12">
@@ -21,7 +22,7 @@
                             </div>
                          <div class="row">
                             <div class="col-md-5">
-                                <asp:Label Text="" ID="NombreDocumento" runat="server" CssClass="alert-info" />
+                                <asp:Label Text="" ID="NombreDocente" runat="server" CssClass="alert-info" />
                             </div>
                             <div class="col-md-5">
                                 <asp:Label Text="" ID="DocumentoDocente" runat="server" />
@@ -29,8 +30,38 @@
                             </div>
 
                         </div>
-
-
+                        <br />
+                        <br />
+                        <br />
+                                  <H6>CURSOS DISPONIBLES</H6>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Jornada</th>
+                                    
+                                </tr>
+                            </thead>
+                            <tbody>
+                                 <asp:ListView runat="server" ID="listaDeCursos" OnItemEditing="listaDeCursos_ItemEditing" >
+                                <ItemTemplate>
+                                    <tr>
+                                        <td>
+                                            <asp:Label Text='<%#Eval("nombCURSO") %>' ID="NombreCurso" runat="server" />
+                                            <asp:Label Text='<%#Eval("idCURSO") %>' runat="server" id="idCURSO" Visible="false"/>
+                                        </td>
+                                        <td>
+                                            <asp:Label Text='<%#Eval("jornCURSO") %>' ID="JornadaCurso" runat="server" />
+                                        </td>
+                                       
+                                        <td>
+                                            <asp:LinkButton Text="Asignar" runat="server"  ID="AsignarCurso" CssClass="nc-tap-01" CommandName="edit"/>
+                                        </td>
+                                    </tr>
+                                </ItemTemplate>
+                            </asp:ListView>
+                            </tbody>                            
+                        </table>
 
                         </div>
                     </div>
