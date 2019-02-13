@@ -29,7 +29,7 @@ namespace AICF.Modelos
         public DataTable ConsultarMenu(string rol)
         {
 
-            return con.ConsultarDatos("SELECT m.idMENU, m.nombreMENU,subm.MENU_idMENU,subm.nombreSUBMENU,subm.rutaSUBMENU,subm.pesoSUBMENU from rol r inner join rolpermiso rp on rp.idROLPERMISO = r.idROL and r.NombROL = '"+rol+"' INNER JOIN permiso PER ON rp.PERMISO_idPERMISO = PER.idPERMISO INNER JOIN submenu subm on subm.PERMISO_idPERMISO = PER.idPERMISO INNER JOIN menu m on subm.MENU_idMENU = m.idMENU order by subm.pesoSUBMENU ASC");
+            return con.ConsultarDatos("SELECT subm.nombreSUBMENU,subm.rutaSUBMENU,subm.pesoSUBMENU FROM permiso p INNER JOIN rol r ON p.ROL_idROL=r.idROL INNER JOIN submenu subm ON p.SUBMENU_idSUBMENU= subm.idSUBMENU WHERE r.NombROL = '"+rol+"'");
         }
 
 

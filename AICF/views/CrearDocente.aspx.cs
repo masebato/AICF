@@ -23,7 +23,7 @@ namespace AICF.views
         {
             try
             {
-               Datatable_Persona= obj_Persona.ConsultarDocente(NumeroDocumentoPersona.Text);
+                Datatable_Persona= obj_Persona.ConsultarPersonadocu(NumeroDocumentoPersona.Text);
                 ListaPersonasdocente.DataSource = Datatable_Persona;
                 ListaPersonasdocente.DataBind();
 
@@ -45,6 +45,7 @@ namespace AICF.views
                 Label id = (Label)ListaPersonasdocente.Items[e.NewEditIndex].FindControl("idpersona");
                 obj_Persona.CrearDocente(id.Text);
                 NumeroDocumentoPersona.Text = "";
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "pop", "swal('ASIGNADO CON ÉXITO', '', 'SUCCESS');", true);
             }
             catch (Exception)
             {

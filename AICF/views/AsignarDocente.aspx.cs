@@ -61,8 +61,15 @@ namespace AICF.views
             try
             {
                 Label id = (Label)listaDeCursos.Items[e.NewEditIndex].FindControl("idCurso");
-                obj_curso.InsertardDocentecurso(Int32.Parse(idDocente.Text), Int32.Parse(id.Text));
-                NumeroDocumentoDocente.Text = "";
+                if (obj_curso.InsertardDocentecurso(Int32.Parse(idDocente.Text), Int32.Parse(id.Text)))
+                {
+                    NumeroDocumentoDocente.Text = "";
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "pop", "swal('ESTUDIANTE REGISTRADO', '', 'success');", true);
+                }else{
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "pop", "swal('EL ESTUDIANTE YA ESTA REGISTRADO', '', 'error');", true);
+                }
+             
+               
             }
             catch (Exception)
             {

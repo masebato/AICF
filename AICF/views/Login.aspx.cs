@@ -33,7 +33,7 @@ namespace AICF.views
                 dato=log.iniciarSesion(users.Text, pass.Value);
 
           
-                if (dato.Rows[0]!=null)
+                 if (dato.Rows[0]!=null)
                 {
                     string value = dato.Rows[0]["idPersona"].ToString();
                     sesion = per.ConsultarPersona(value);

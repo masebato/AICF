@@ -48,7 +48,7 @@
                             <div class="col-md-4 pr-1">
                                 <div class="form-group">
                                     <label>Dirección</label>
-                                    <asp:TextBox runat="server" ID="TextBox1" CssClass="form-control" placeholder="Direccion" required />
+                                    <asp:TextBox runat="server" ID="direccionEstudiante" CssClass="form-control" placeholder="Direccion" required />
                                 </div>
                             </div>
                             <div class="col-md-4 pr-1">
@@ -66,7 +66,7 @@
                         </div>
                     </div>
                     <div class="card-footer">
-                        <asp:Button Text="Crear" CssClass="btn btn-success" runat="server" />
+                        <asp:Button Text="Crear" CssClass="btn btn-success" runat="server" OnClick="Unnamed_Click"/>
                     </div>
                 </div>
             </div>

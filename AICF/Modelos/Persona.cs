@@ -19,6 +19,7 @@ namespace AICF.Modelos
         public string direPERSONA { get; set; }
         public string corrPERSONA { get; set; }
         public string telePERSONA { get; set; }
+        public string docuPERSONA { get; set; }
 
 
 
@@ -27,6 +28,12 @@ namespace AICF.Modelos
 
             return con.ConsultarDatos("select persona.nombPERSONA, persona.apelPERSONA, rol.NombROL from persona inner join Rol on rol.PERSONA_idPERSONA=persona.idPERSONA where persona.idPERSONA='" + idpersona+"'");
 
+        }
+
+        public DataTable ConsultarPersonadocu(string documento)
+        {
+
+            return con.ConsultarDatos("select CONCAT( persona.nombPERSONA, ' ' ,persona.apelPERSONA) as nombre, persona.idPERSONA, persona.docuPERSONA as documento  from persona  where persona.docuPERSONA='" + documento + "'");
 
         }
 
@@ -45,5 +52,10 @@ namespace AICF.Modelos
             return con.OperarDatos("insert into docente values ('" + idPersona + "');");
         }
 
+        public bool CrearPersona(string nombPersona, string apelPersona, string direPersona, string CorrPersona, string telePersona, string idenPersona)
+        {
+
+            return con.OperarDatos("insert into persona (nombPERSONA, apelPERSONA, direPERSONA, corrPERSONA, telePERSONA, docuPERSONA) values('"+ nombPersona + "','"+apelPersona+"','"+ direPersona + "','"+ CorrPersona + "','"+telePersona+"','"+idenPersona+"')");
+        }
     }
 }
