@@ -26,7 +26,7 @@ namespace AICF.Modelos
         public DataTable ConsultarPersona(string idpersona)
         {
 
-            return con.ConsultarDatos("select persona.nombPERSONA, persona.apelPERSONA, rol.NombROL from persona inner join Rol on rol.PERSONA_idPERSONA=persona.idPERSONA where persona.idPERSONA='" + idpersona+"'");
+            return con.ConsultarDatos("select persona.nombPERSONA, persona.apelPERSONA, rol.NombROL from persona INNER join PERSONA_ROL perol on persona.idPERSONA = perol.PERSONA_idPERSONA inner join Rol on rol.idROL = ROL_idROL where persona.idPERSONA = '"+idpersona+"'");
 
         }
 
@@ -47,15 +47,21 @@ namespace AICF.Modelos
             return con.ConsultarDatos("select CONCAT(persona.nombPERSONA,' ', persona.apelPERSONA) as nombre, persona.idPERSONA as idpersona, persona.docuPERSONA as documento from docente inner join persona on docente.idPERSONA = persona.idPERSONA where persona.docuPERSONA='" + documento+"';");
         }
 
-        public bool CrearDocente(string idPersona)
+        //public bool CrearDocente(string idPersona)
+        //{
+        //    return con.OperarDatos("insert into docente values ('" + idPersona + "');");
+        //}
+
+        public bool CrearPersona(string nombPersona, string apelPersona, string direPersona, string CorrPersona, string telePersona, string idenPersona, string rol)
         {
-            return con.OperarDatos("insert into docente values ('" + idPersona + "');");
+
+            return con.OperarDatos("insert into persona (nombPERSONA, apelPERSONA, direPERSONA, corrPERSONA, telePERSONA, docuPERSONA) values('"+ nombPersona + "','"+apelPersona+"','"+ direPersona + "','"+ CorrPersona + "','"+telePersona+"','"+idenPersona+ "'); insert into Persona_rol (PERSONA_idPERSONA,ROL_idROL) values((select max(idPERSONA) from persona),'"+rol+"');  ");
+        }
+        public DataTable ConsultarRol()
+        {
+            return con.ConsultarDatos("select idROL, NombROL from rol");
+
         }
 
-        public bool CrearPersona(string nombPersona, string apelPersona, string direPersona, string CorrPersona, string telePersona, string idenPersona)
-        {
-
-            return con.OperarDatos("insert into persona (nombPERSONA, apelPERSONA, direPERSONA, corrPERSONA, telePERSONA, docuPERSONA) values('"+ nombPersona + "','"+apelPersona+"','"+ direPersona + "','"+ CorrPersona + "','"+telePersona+"','"+idenPersona+"')");
-        }
     }
 }

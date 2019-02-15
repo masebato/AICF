@@ -28,7 +28,6 @@
                                 <asp:Label Text="" ID="DocumentoDocente" runat="server" />
                                 <asp:Label Text="" runat="server" ID="idDocente" Visible="false" />
                             </div>
-
                         </div>
                         <br />
                         <br />

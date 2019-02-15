@@ -31,6 +31,24 @@ namespace AICF.views {
         protected global::System.Web.UI.WebControls.TextBox ApellidoEstudiante;
         
         /// <summary>
+        /// Control roles.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList roles;
+        
+        /// <summary>
+        /// Control tipodocu.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList tipodocu;
+        
+        /// <summary>
         /// Control Identificacion.
         /// </summary>
         /// <remarks>
@@ -38,6 +56,15 @@ namespace AICF.views {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox Identificacion;
+        
+        /// <summary>
+        /// Control genero.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList genero;
         
         /// <summary>
         /// Control direccionEstudiante.

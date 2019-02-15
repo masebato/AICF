@@ -27,7 +27,7 @@ namespace AICF.views
             {
                 Obj_Persona = new Persona();
 
-                Persona = Obj_Persona.ConsultarDocente(NumeroDocumentoDocente.Text);
+                Persona = Obj_Persona.ConsultarPersonadocu(NumeroDocumentoDocente.Text);
 
                 NombreDocente.Text = Persona.Rows[0]["nombre"].ToString();
                 DocumentoDocente.Text = Persona.Rows[0]["documento"].ToString();
@@ -64,7 +64,8 @@ namespace AICF.views
                 if (obj_curso.InsertardDocentecurso(Int32.Parse(idDocente.Text), Int32.Parse(id.Text)))
                 {
                     NumeroDocumentoDocente.Text = "";
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "pop", "swal('ESTUDIANTE REGISTRADO', '', 'success');", true);
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "pop", "swal('DOCENTE REGISTRADO', '', 'success');", true);
+                    
                 }else{
                     ScriptManager.RegisterStartupScript(this, this.GetType(), "pop", "swal('EL ESTUDIANTE YA ESTA REGISTRADO', '', 'error');", true);
                 }

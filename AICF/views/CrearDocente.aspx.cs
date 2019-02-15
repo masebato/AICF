@@ -43,7 +43,7 @@ namespace AICF.views
             try
             {
                 Label id = (Label)ListaPersonasdocente.Items[e.NewEditIndex].FindControl("idpersona");
-                obj_Persona.CrearDocente(id.Text);
+                //obj_Persona.CrearDocente(id.Text);
                 NumeroDocumentoPersona.Text = "";
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "pop", "swal('ASIGNADO CON ÉXITO', '', 'SUCCESS');", true);
             }
