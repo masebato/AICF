@@ -109,6 +109,7 @@
     <Content Include="views\assets\js\plugins\perfect-scrollbar.jquery.min.js" />
     <Content Include="views\ConsultarCalificaciones.aspx" />
     <Content Include="views\ConsultarCurso.aspx" />
+    <Content Include="views\CrearAsignatura.aspx" />
     <Content Include="views\crearCurso.aspx" />
     <Content Include="views\CrearDocente.aspx" />
     <Content Include="views\CrearPersona.aspx" />
@@ -120,6 +121,7 @@
     <Compile Include="AccesoDatos\Conexion\Conexion.cs" />
     <Compile Include="AccesoDatos\Conexion\Datos.cs" />
     <Compile Include="AccesoDatos\Interface\IDatos.cs" />
+    <Compile Include="Modelos\Asignatura.cs" />
     <Compile Include="Modelos\Calificacion.cs" />
     <Compile Include="Modelos\Curso.cs" />
     <Compile Include="Modelos\Login.cs" />
@@ -155,6 +157,13 @@
     </Compile>
     <Compile Include="views\ConsultarCurso.aspx.designer.cs">
       <DependentUpon>ConsultarCurso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="views\CrearAsignatura.aspx.cs">
+      <DependentUpon>CrearAsignatura.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="views\CrearAsignatura.aspx.designer.cs">
+      <DependentUpon>CrearAsignatura.aspx</DependentUpon>
     </Compile>
     <Compile Include="views\crearCurso.aspx.cs">
       <DependentUpon>crearCurso.aspx</DependentUpon>

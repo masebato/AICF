@@ -54,7 +54,7 @@
                                         </td>
                                        
                                         <td>
-                                            <asp:LinkButton Text="Asignar" runat="server"  ID="AsignarCurso" CssClass="nc-tap-01" CommandName="edit"/>
+                                            <asp:LinkButton Text="Asignar" runat="server"  ID="AsignarCurso" CssClass="btn " CommandName="edit"/>
                                         </td>
                                     </tr>
                                 </ItemTemplate>

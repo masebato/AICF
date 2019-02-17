@@ -32,7 +32,6 @@
                                 <asp:Label Text="" ID="DocumentoEstudiante" runat="server" />
                                 <asp:Label Text="" runat="server" ID="idPERSONa" Visible="false" />
                             </div>
-
                         </div>
                         <br />
                         <br />
@@ -41,8 +40,7 @@
                             <thead>
                                 <tr>
                                     <th>Nombre</th>
-                                    <th>Jornada</th>
-                                    <th>Docente</th>
+                                    <th>Jornada</th>                                    
                                 </tr>
                             </thead>
                             <tbody>
@@ -55,19 +53,15 @@
                                             </td>
                                             <td>
                                                 <asp:Label Text='<%#Eval("jornCURSO") %>' ID="JornadaCurso" runat="server" />
-                                            </td>
+                                            </td>                                          
                                             <td>
-                                                <asp:Label Text='<%#Eval("profesor") %>' ID="DocenteCurso" runat="server" />
-                                            </td>
-                                            <td>
-                                                <asp:LinkButton Text="Matricular" runat="server" ID="AsignarCurso" CssClass="nc-tap-01" CommandName="edit" />
+                                                <asp:LinkButton Text="Matricular" runat="server" ID="AsignarCurso" CssClass="btn" CommandName="edit" />
                                             </td>
                                         </tr>
                                     </ItemTemplate>
                                 </asp:ListView>
                             </tbody>
                         </table>
-
                     </div>
                     <div class="card-footer">
                     </div>

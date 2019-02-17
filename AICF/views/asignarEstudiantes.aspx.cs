@@ -49,12 +49,10 @@ namespace AICF.views
                 DocumentoEstudiante.Text = Estudiante.Rows[0]["docuPERSONA"].ToString();
                 idPERSONa.Text = Estudiante.Rows[0]["idPERSONa"].ToString();
                 ConsultarCursos();                                        
-
             }
             catch (Exception)
             {
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "pop", "swal('OCURRIO UN ERROR', '', 'error');", true);
-
             }
                       
         }

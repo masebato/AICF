@@ -22,16 +22,16 @@ namespace AICF.Modelos
 
         public DataTable ConsultarCursos()
         {
-          return  con.ConsultarDatos("select idCURSO,nombCURSO, jornCURSO, CONCAT(nombPERSONA,' ',apelPERSONA) as profesor from curso inner join docente on docente.idPERSONA = curso.DOCENTE_idPERSONA inner join persona on docente.idPERSONA=persona.idPERSONA ");
+          return  con.ConsultarDatos("select idCURSO,nombCURSO, jornCURSO, cupoCURSO from curso inner JOIN curso_persona ON curso.idCURSO = curso_persona.CURSO_idCURSO INNER JOIN persona ON curso_persona.PERSONA_idPERSONA = persona.idPERSONA INNER JOIN persona_rol ON persona_rol.PERSONA_idPERSONA = persona.idPERSONA WHERE persona_rol.ROL_idROL = 2");
         }
 
         public bool InsertarEstudiantesEnCurso(int idPersona, int idCurso)
         {
-          return con.OperarDatos("insert into estudiante value('"+idPersona+"','"+idCurso+"')");
+          return con.OperarDatos("insert into CURSO_PERSONA (PERSONA_idPERSONA,CURSO_idCURSO) value('" + idPersona+"','"+idCurso+"')");
         }
         public bool InsertardDocentecurso( int idPersona, int idCurso)
         {
-            return con.OperarDatos("insert into docente values ('"+idPersona+ "'); update curso set DOCENTE_idPERSONA ='" + idPersona + "' where idCURSO ='" + idCURSO + "' ");
+            return con.OperarDatos("insert into CURSO_PERSONA (PERSONA_idPERSONA,CURSO_idCURSO) value('" + idPersona + "','" + idCurso + "')");
         }   
 
         public bool CrearCurso(Curso obj_curso)
@@ -40,7 +40,7 @@ namespace AICF.Modelos
         }
         public DataTable ConsultarCursoSinDocente()
         {
-            return con.ConsultarDatos("select nombCURSO, jornCURSO, idCURSO from curso where curso.DOCENTE_idPERSONA is null;");
+            return con.ConsultarDatos("select idCURSO,nombCURSO, jornCURSO, cupoCURSO from curso left JOIN curso_persona ON curso.idCURSO = curso_persona.CURSO_idCURSO WHERE curso_persona.idCURSO_PERSONA  IS NULL  ");
         }
     }
     
