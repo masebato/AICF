@@ -71,6 +71,7 @@
   <ItemGroup>
     <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
     <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />
+    <Content Include="views\AgregarAsignatura.aspx" />
     <Content Include="views\AsignarDocente.aspx" />
     <Content Include="views\asignarEstudiantes.aspx" />
     <Content Include="views\assets\css\bootstrap.min.css" />
@@ -130,6 +131,13 @@
     <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="views\AgregarAsignatura.aspx.cs">
+      <DependentUpon>AgregarAsignatura.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="views\AgregarAsignatura.aspx.designer.cs">
+      <DependentUpon>AgregarAsignatura.aspx</DependentUpon>
+    </Compile>
     <Compile Include="views\AsignarDocente.aspx.cs">
       <DependentUpon>AsignarDocente.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

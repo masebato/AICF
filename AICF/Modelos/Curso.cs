@@ -42,6 +42,11 @@ namespace AICF.Modelos
         {
             return con.ConsultarDatos("select idCURSO,nombCURSO, jornCURSO, cupoCURSO from curso left JOIN curso_persona ON curso.idCURSO = curso_persona.CURSO_idCURSO WHERE curso_persona.idCURSO_PERSONA  IS NULL  ");
         }
+
+        public DataTable ConsultarCursosActivos()
+        {
+            return con.ConsultarDatos("select idCURSO, nombCURSO, jonCURSO form curso where estadoCURSO='ACTIVO'");
+        }
     }
     
 }
