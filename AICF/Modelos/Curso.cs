@@ -17,8 +17,12 @@ namespace AICF.Modelos
         public string jornCURSO { get; set; }
         public string cupoCURSO { get; set; }
         public string DOCENTE_idPERSONA { get; set; }
-
         public string descripcionCURSO { get; set; }
+
+        public Curso()
+        {
+
+        }
 
         public DataTable ConsultarCursos()
         {
@@ -45,8 +49,24 @@ namespace AICF.Modelos
 
         public DataTable ConsultarCursosActivos()
         {
-            return con.ConsultarDatos("select idCURSO, nombCURSO, jonCURSO form curso where estadoCURSO='ACTIVO'");
+            return con.ConsultarDatos("select idCURSO, nombCURSO from curso where estadoCURSO='ACTIVO'");
         }
+
+        public DataTable ConsultarAsignaturasCurso(string idCurso)
+        {
+            return con.ConsultarDatos("select idAsignatura, nombASIGNATURA from asignatura INNER JOIN curso_asignatura ON curso_asignatura.ASIGNATURA_idASIGNATURA = asignatura.idASIGNATURA INNER JOIN curso ON curso_asignatura.CURSO_idCURSO = curso.idCURSO where idCurso = '"+idCurso+"';");
+        }
+
+        public bool InsertarAsignaturaCurso(string Curso, string asignatura)
+        {
+            return con.OperarDatos("insert into curso_asignatura (CURSO_idCURSO,ASIGNATURA_idASIGNATURA) values('"+Curso+"','"+asignatura+"')");
+        }
+
+        public bool ActualizarAsignaturaCurso(string Curso, string asignatura)
+        {
+            return con.OperarDatos("delete from curso_asignatura where CURSO_idCURSO = '"+Curso+"' and ASIGNATURA_idASIGNATURA = '"+asignatura+"'");
+        }
+
     }
     
 }

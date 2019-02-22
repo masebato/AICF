@@ -29,7 +29,15 @@ namespace AICF.Modelos
             this.estadoASIGNATURA = estado;
         }
 
+        public Asignatura()
+        {
 
+        }
+
+        public DataTable ConsultarAsignatura2()
+        {
+            return con.ConsultarDatos("select  idASIGNATURA,nombASIGNATURA from asignatura");
+        }
 
         public DataTable ConsultarAsignaturas()
         {
