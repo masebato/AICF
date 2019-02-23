@@ -107,7 +107,7 @@ namespace AICF.views
                 }
                 else
                 {
-                    AsignaturasCurso.DataSource = table_Asignaturas;
+                    AsignaturasCurso.DataSource = table_AsignaturaCurso;
                     AsignaturasSolas.DataSource = diferencias;
                     AsignaturasCurso.DataBind();
                     AsignaturasSolas.DataBind();

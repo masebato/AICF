@@ -34,7 +34,7 @@ namespace AICF.views
             catch (Exception)
             {
 
-                throw;
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "hwa", " swal('OCURRIO UNA EXCEPTION', '', 'error');", true);
             }          
         }
 

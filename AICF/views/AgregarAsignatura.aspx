@@ -30,7 +30,7 @@
                                     <thead>
                                         <tr>
                                             <th>NOMBRE</th>
-                                            <td>ELIMINAR</td>
+                                            <th>ELIMINAR</th>
                                         </tr>
                                     </thead>
                                     <tbody class="text-left">

@@ -73,5 +73,10 @@ namespace AICF.Modelos
 
             return con.ConsultarDatos("SELECT CONCAT(nombPERSONA,' ', apelPERSONA) AS nombre, docuPERSONA FROM curso INNER JOIN curso_persona ON curso_persona.CURSO_idCURSO = curso.idCURSO INNER JOIN persona ON curso_persona.PERSONA_idPERSONA = persona.idPERSONA INNER JOIN persona_rol ON persona_rol.PERSONA_idPERSONA = persona.idPERSONA INNER JOIN rol ON persona_rol.ROL_idROL = rol.idROL WHERE persona_rol.ROL_idROL = 2 AND curso_persona.CURSO_idCURSO = '" + id + "'");
         }
+
+        public DataTable ConsultarEstudianteCursoDocumento(string documento)
+        {
+            return con.ConsultarDatos("SELECT CONCAT(nombPERSONA,' ', apelPERSONA) AS nombre, docuPERSONA, nombCURSO FROM curso INNER JOIN curso_persona ON curso_persona.CURSO_idCURSO = curso.idCURSO INNER JOIN persona ON curso_persona.PERSONA_idPERSONA = persona.idPERSONA INNER JOIN persona_rol ON persona_rol.PERSONA_idPERSONA = persona.idPERSONA INNER JOIN rol ON persona_rol.ROL_idROL = rol.idROL WHERE persona_rol.ROL_idROL = 3 AND persona.docuPERSONA='"+documento+"'");
+        }
     }
 }

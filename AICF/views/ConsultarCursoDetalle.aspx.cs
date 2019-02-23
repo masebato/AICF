@@ -17,20 +17,27 @@ namespace AICF.views
         DataTable Table_Asignaturas = new DataTable();
         Curso obj_curso;
         Persona obj_persona;
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                Table_Curso = (DataTable)Session["Data_curso"];
-                CargarDatosCurso(Table_Curso);
+                try
+                {
+                    Table_Curso = (DataTable)Session["Data_curso"];
+                    CargarDatosCurso(Table_Curso);
+                }
+                catch (Exception)
+                {
+                    Response.Redirect("inicio.aspx");
+                }               
             }           
         }
 
         public void CargarDatosCurso(DataTable curso)
         {
             try
-            {
-               
+            {               
                 obj_persona = new Persona(); ;
                 Table_docente = obj_persona.consultarDocenteCurso(curso.Rows[0]["idCURSO"].ToString());
                 Profesor.Text = Table_docente.Rows[0]["nombre"].ToString();
@@ -38,12 +45,10 @@ namespace AICF.views
                 Jornada.Text = curso.Rows[0]["jornCURSO"].ToString();
                 CargarAsignaturas(curso.Rows[0]["idCURSO"].ToString());
                 CargarEstudiantes(curso.Rows[0]["idCURSO"].ToString());
-
-
             }
             catch (Exception)
             {
-                throw;
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "hwa", " swal('OCURRIO UNA EXCEPTION', '', 'error');", true);
             }                       
         }
 
@@ -57,8 +62,7 @@ namespace AICF.views
             }
             catch (Exception)
             {
-
-                throw;
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "hwa", " swal('OCURRIO UNA EXCEPTION', '', 'error');", true);
             }
         }
 
@@ -72,9 +76,25 @@ namespace AICF.views
             }
             catch (Exception)
             {
-
-                throw;
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "hwa", " swal('OCURRIO UNA EXCEPTION', '', 'error');", true);
             }
+        }
+
+        protected void EstudiantesCurso_ItemEditing(object sender, ListViewEditEventArgs e)
+        {
+            try
+            {
+                obj_persona = new Persona();
+                EstudiantesCurso.EditIndex = e.NewEditIndex;
+                Label documento = (Label)EstudiantesCurso.Items[e.NewEditIndex].FindControl("documentoEstudiante");
+                Session.Add("Data_estudiante",obj_persona.ConsultarEstudianteCursoDocumento(documento.Text));
+                Session.Add("ID", 2);
+                Response.Redirect("ConsultarCalificaciones.aspx");
+            }
+            catch (Exception)
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "hwa", " swal('OCURRIO UNA EXCEPTION', '', 'error');", true);
+            }        
         }
     }
 }
