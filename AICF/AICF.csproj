@@ -110,6 +110,7 @@
     <Content Include="views\assets\js\plugins\perfect-scrollbar.jquery.min.js" />
     <Content Include="views\ConsultarCalificaciones.aspx" />
     <Content Include="views\ConsultarCurso.aspx" />
+    <Content Include="views\ConsultarCursoDetalle.aspx" />
     <Content Include="views\CrearAsignatura.aspx" />
     <Content Include="views\crearCurso.aspx" />
     <Content Include="views\CrearDocente.aspx" />
@@ -165,6 +166,13 @@
     </Compile>
     <Compile Include="views\ConsultarCurso.aspx.designer.cs">
       <DependentUpon>ConsultarCurso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="views\ConsultarCursoDetalle.aspx.cs">
+      <DependentUpon>ConsultarCursoDetalle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="views\ConsultarCursoDetalle.aspx.designer.cs">
+      <DependentUpon>ConsultarCursoDetalle.aspx</DependentUpon>
     </Compile>
     <Compile Include="views\CrearAsignatura.aspx.cs">
       <DependentUpon>CrearAsignatura.aspx</DependentUpon>
