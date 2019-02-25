@@ -96,5 +96,10 @@ namespace AICF.views
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "hwa", " swal('OCURRIO UNA EXCEPTION', '', 'error');", true);
             }        
         }
+
+        protected void AsignaturasDelcurso_ItemEditing(object sender, ListViewEditEventArgs e)
+        {
+
+        }
     }
 }

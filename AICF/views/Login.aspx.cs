@@ -40,7 +40,7 @@ namespace AICF.views
                     Session["Nombre"] = sesion.Rows[0]["nombPERSONA"];
                     Session["Apellido"] = sesion.Rows[0]["apelPERSONA"];
                     Session["Rol"] = sesion.Rows[0]["NombROL"];
-
+                    Session["idPERSONA"] = value;
                     Response.Redirect("Inicio.aspx");
                 }
                 else

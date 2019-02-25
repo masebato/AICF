@@ -26,7 +26,7 @@ namespace AICF.Modelos
         public DataTable ConsultarPersona(string idpersona)
         {
 
-            return con.ConsultarDatos("select persona.nombPERSONA, persona.apelPERSONA, rol.NombROL from persona INNER join PERSONA_ROL perol on persona.idPERSONA = perol.PERSONA_idPERSONA inner join Rol on rol.idROL = ROL_idROL where persona.idPERSONA = '"+idpersona+"'");
+            return con.ConsultarDatos("select persona.nombPERSONA, persona.apelPERSONA, rol.NombROL, docuPERSONA from persona INNER join PERSONA_ROL perol on persona.idPERSONA = perol.PERSONA_idPERSONA inner join Rol on rol.idROL = ROL_idROL where persona.idPERSONA = '"+idpersona+"'");
 
         }
 

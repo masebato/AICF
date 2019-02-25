@@ -22,8 +22,5 @@ namespace AICF.Modelos
         {
           return  con.ConsultarDatos("SELECT nombCALIFICACION, valor, nombASIGNATURA FROM CURSO  INNER JOIN curso_asignatura ON curso_asignatura.CURSO_idCURSO = curso.idCURSO INNER JOIN asignatura ON curso_asignatura.ASIGNATURA_idASIGNATURA = asignatura.idASIGNATURA INNER JOIN calificacion_asignatura ON calificacion_asignatura.ASIGNATURA_idASIGNATURA = asignatura.idASIGNATURA INNER JOIN calificacion ON calificacion_asignatura.CALIFICACION_idCALIFICACION = calificacion.idCALIFICACION INNER JOIN PERSONA ON calificacion_asignatura.PERSONA_idPERSONA = persona.idPERSONA WHERE docuPERSONA = '"+documento+"'");
         }
-
-    } 
-    
-
+    }     
 }

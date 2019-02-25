@@ -23,6 +23,7 @@ namespace AICF.views
                 {
                     CreateMenu();
                     nombreSesion.Text = Session["nombre"].ToString();
+
                 }
                 catch (Exception)
                 {

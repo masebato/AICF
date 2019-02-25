@@ -45,7 +45,7 @@ namespace AICF.Modelos
 
         public bool CrearCurso(Curso obj_curso)
         {
-            return con.OperarDatos("insert into curso (nombCURSO, horasCURSO,  jornCURSO, cupoCURSO, descripcionCURSO) values ('"+obj_curso.nombCURSO+"','"+obj_curso.horasCURSO+"','"+obj_curso.jornCURSO+"','"+obj_curso.cupoCURSO+"','"+obj_curso.descripcionCURSO+"') ");
+            return con.OperarDatos("insert into curso (nombCURSO, horasCURSO,  jornCURSO, cupoCURSO, descripcionCURSO, estadoCURSO) values ('"+obj_curso.nombCURSO+"','"+obj_curso.horasCURSO+"','"+obj_curso.jornCURSO+"','"+obj_curso.cupoCURSO+"','"+obj_curso.descripcionCURSO+"','ACTIVO') ");
         }
         public DataTable ConsultarCursoSinDocente()
         {
@@ -70,6 +70,11 @@ namespace AICF.Modelos
         public bool ActualizarAsignaturaCurso(string Curso, string asignatura)
         {
             return con.OperarDatos("delete from curso_asignatura where CURSO_idCURSO = '"+Curso+"' and ASIGNATURA_idASIGNATURA = '"+asignatura+"'");
+        }
+
+        public DataTable ConsultarCursosDocente(string iddocente)
+        {
+            return con.ConsultarDatos("SELECT nombCURSO, jornCURSO, idCURSO, CONCAT(nombPERSONA,' ', apelPERSONA) AS nombre, docuPERSONA FROM rol inner join persona_rol on persona_rol.ROL_idROL = rol.idROL INNER JOIN  persona ON persona_rol.PERSONA_idPERSONA = persona.idPERSONA INNER JOIN curso_persona on curso_persona.PERSONA_idPERSONA = persona.idPERSONA INNER JOIN curso ON curso_persona.CURSO_idCURSO = curso.idCURSO WHERE persona_rol.PERSONA_idPERSONA = '"+iddocente+"' AND persona_rol.ROL_idROL = 2");
         }
     }    
 }

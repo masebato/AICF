@@ -111,7 +111,9 @@
     <Content Include="views\ConsultarCalificaciones.aspx" />
     <Content Include="views\ConsultarCurso.aspx" />
     <Content Include="views\ConsultarCursoDetalle.aspx" />
+    <Content Include="views\ConsultarCursosDocente.aspx" />
     <Content Include="views\CrearAsignatura.aspx" />
+    <Content Include="views\CrearCalificaciones.aspx" />
     <Content Include="views\crearCurso.aspx" />
     <Content Include="views\CrearDocente.aspx" />
     <Content Include="views\CrearPersona.aspx" />
@@ -174,12 +176,26 @@
     <Compile Include="views\ConsultarCursoDetalle.aspx.designer.cs">
       <DependentUpon>ConsultarCursoDetalle.aspx</DependentUpon>
     </Compile>
+    <Compile Include="views\ConsultarCursosDocente.aspx.cs">
+      <DependentUpon>ConsultarCursosDocente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="views\ConsultarCursosDocente.aspx.designer.cs">
+      <DependentUpon>ConsultarCursosDocente.aspx</DependentUpon>
+    </Compile>
     <Compile Include="views\CrearAsignatura.aspx.cs">
       <DependentUpon>CrearAsignatura.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="views\CrearAsignatura.aspx.designer.cs">
       <DependentUpon>CrearAsignatura.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="views\CrearCalificaciones.aspx.cs">
+      <DependentUpon>CrearCalificaciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="views\CrearCalificaciones.aspx.designer.cs">
+      <DependentUpon>CrearCalificaciones.aspx</DependentUpon>
     </Compile>
     <Compile Include="views\crearCurso.aspx.cs">
       <DependentUpon>crearCurso.aspx</DependentUpon>

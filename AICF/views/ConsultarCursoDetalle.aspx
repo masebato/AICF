@@ -40,12 +40,15 @@
                             <div class="card-body">
                                 <table id="AsignaturasMateria" class="table table-responsive-lg">                                   
                                     <tbody>
-                                        <asp:ListView runat="server" ID="AsignaturasDelcurso">
+                                        <asp:ListView runat="server" ID="AsignaturasDelcurso" DataKeyNames="idasignatura" OnItemEditing="AsignaturasDelcurso_ItemEditing">
                                             <ItemTemplate>
                                                 <tr>
                                                     <td>
                                                         <asp:Label Text='<%#Eval("nombASIGNATURA") %>' runat="server" />
-                                                        <asp:Label Text='<%#Eval("idAsignatura") %>' runat="server" Visible="false" />
+                                                        <asp:Label Text='<%#Eval("idAsignatura") %>' runat="server" Visible="false"  ID="idasignatura"/>
+                                                    </td>
+                                                    <td>
+                                                          <asp:LinkButton  CssClass="icono-document" runat="server" CommandName="edit"/>
                                                     </td>
                                                 </tr>
                                             </ItemTemplate>

@@ -9,41 +9,36 @@ using AICF.Modelos;
 
 namespace AICF.views
 {
-    public partial class ConsultarCurso : System.Web.UI.Page
+    public partial class ConsultarCursosDocente : System.Web.UI.Page
     {
-        DataTable Table_Cursos = new DataTable();
-        Curso obj_curso;
+        Curso obj_curso = new Curso();
+        DataTable table_curso = new DataTable();
 
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                ConsultarCursos();
-            }          
+                ConsultarCursos(Session["idPERSONA"].ToString());
+            }        
         }
 
-        public void ConsultarCursos()
+        public void ConsultarCursos(string docuDocente)
         {
-            try
-            {
-                obj_curso = new Curso();
-                CursosActivos.DataSource = obj_curso.ConsultarCursosActivos();
-                CursosActivos.DataBind();
-            }
-            catch (Exception)
-            {
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "hwa", " swal('OCURRIO UNA EXCEPTION', '', 'error');", true);
-            }          
+            table_curso = obj_curso.ConsultarCursosDocente(docuDocente);
+            NombreDocente.Text = table_curso.Rows[0]["nombre"].ToString() ;
+            Documento.Text = table_curso.Rows[0]["docuPERSONA"].ToString(); ;
+            CursosActivos.DataSource = table_curso;
+            CursosActivos.DataBind();
         }
 
         protected void CursosActivos_ItemEditing(object sender, ListViewEditEventArgs e)
         {
             try
             {
-                obj_curso = new Curso();               
+                obj_curso = new Curso();
                 CursosActivos.EditIndex = e.NewEditIndex;
                 Label idCurso = (Label)CursosActivos.Items[e.NewEditIndex].FindControl("idCURSO");
-                Session.Add("Data_curso",  obj_curso.ConsultarCursoid(idCurso.Text));
+                Session.Add("Data_curso", obj_curso.ConsultarCursoid(idCurso.Text));
                 Session.Add("ID", 1);
                 Response.Redirect("ConsultarCursoDetalle.aspx");
 
@@ -52,7 +47,7 @@ namespace AICF.views
             {
 
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "hwa", " swal('OCURRIO UNA EXCEPTION', '', 'error');", true);
-            }          
+            }
         }
     }
 }
