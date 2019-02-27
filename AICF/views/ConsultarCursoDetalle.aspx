@@ -45,7 +45,7 @@
                                                 <tr>
                                                     <td>
                                                         <asp:Label Text='<%#Eval("nombASIGNATURA") %>' runat="server" />
-                                                        <asp:Label Text='<%#Eval("idAsignatura") %>' runat="server" Visible="false"  ID="idasignatura"/>
+                                                        <asp:Label Text='<%#Eval("idAsignatura") %>' runat="server" Visible="false"  ID="idasignatura"/>                                                       
                                                     </td>
                                                     <td>
                                                           <asp:LinkButton  CssClass="icono-document" runat="server" CommandName="edit"/>
@@ -53,6 +53,7 @@
                                                 </tr>
                                             </ItemTemplate>
                                         </asp:ListView>
+                                         <asp:Label  runat="server" Visible="false"  ID="Cursoid"/>
                                     </tbody>
                                 </table>
                             </div>

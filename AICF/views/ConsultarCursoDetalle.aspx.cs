@@ -17,6 +17,7 @@ namespace AICF.views
         DataTable Table_Asignaturas = new DataTable();
         Curso obj_curso;
         Persona obj_persona;
+        string idCurso;
         
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -26,6 +27,7 @@ namespace AICF.views
                 {
                     Table_Curso = (DataTable)Session["Data_curso"];
                     CargarDatosCurso(Table_Curso);
+                    idCurso = Table_Curso.Rows[0]["idCURSO"].ToString();
                 }
                 catch (Exception)
                 {
@@ -38,13 +40,14 @@ namespace AICF.views
         {
             try
             {               
-                obj_persona = new Persona(); ;
-                Table_docente = obj_persona.consultarDocenteCurso(curso.Rows[0]["idCURSO"].ToString());
+                obj_persona = new Persona();
+                idCurso = curso.Rows[0]["idCURSO"].ToString();
+                Table_docente = obj_persona.consultarDocenteCurso(idCurso);
                 Profesor.Text = Table_docente.Rows[0]["nombre"].ToString();
                 NombreCurso.Text = curso.Rows[0]["nombCURSO"].ToString();
                 Jornada.Text = curso.Rows[0]["jornCURSO"].ToString();
-                CargarAsignaturas(curso.Rows[0]["idCURSO"].ToString());
-                CargarEstudiantes(curso.Rows[0]["idCURSO"].ToString());
+                CargarAsignaturas(idCurso);               
+                CargarEstudiantes(idCurso);
             }
             catch (Exception)
             {
@@ -59,6 +62,7 @@ namespace AICF.views
                 obj_curso = new Curso();
                 AsignaturasDelcurso.DataSource = obj_curso.ConsultarAsignaturasCurso(idcurso);
                 AsignaturasDelcurso.DataBind();
+                Cursoid.Text = idCurso;
             }
             catch (Exception)
             {
@@ -99,7 +103,18 @@ namespace AICF.views
 
         protected void AsignaturasDelcurso_ItemEditing(object sender, ListViewEditEventArgs e)
         {
+            try
+            {
+                AsignaturasDelcurso.EditIndex = e.NewEditIndex;
+                Label Asignatura = (Label)AsignaturasDelcurso.Items[e.NewEditIndex].FindControl("idasignatura");
 
+                Response.Redirect("CrearCalificaciones.aspx?idasignatura="+Asignatura.Text+"&profesor="+Profesor.Text+"&nombrecurso="+NombreCurso.Text+"&idCurso="+Cursoid.Text +"");
+            }
+            catch (Exception)
+            {
+
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "hwa", " swal('OCURRIO UNA EXCEPTION', '', 'error');", true);
+            }
         }
     }
 }

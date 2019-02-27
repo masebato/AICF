@@ -28,7 +28,6 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -46,7 +45,6 @@
                                 </th>
                                   <th>VALOR                              
                                 </th>
-
                             </tr>
                           </thead>
                             <tbody> 

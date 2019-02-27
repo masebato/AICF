@@ -65,7 +65,7 @@ namespace AICF.Modelos
 
         public DataTable consultarEstudiantesCurso(string id)
         {
-           return con.ConsultarDatos( "SELECT CONCAT(nombPERSONA,' ', apelPERSONA) AS nombre, docuPERSONA FROM curso INNER JOIN curso_persona ON curso_persona.CURSO_idCURSO = curso.idCURSO INNER JOIN persona ON curso_persona.PERSONA_idPERSONA = persona.idPERSONA INNER JOIN persona_rol ON persona_rol.PERSONA_idPERSONA = persona.idPERSONA INNER JOIN rol ON persona_rol.ROL_idROL = rol.idROL WHERE persona_rol.ROL_idROL = 3 AND curso_persona.CURSO_idCURSO = '"+id+"'");
+           return con.ConsultarDatos( "SELECT CONCAT(nombPERSONA,' ', apelPERSONA) AS nombre, docuPERSONA, idPERSONA FROM curso INNER JOIN curso_persona ON curso_persona.CURSO_idCURSO = curso.idCURSO INNER JOIN persona ON curso_persona.PERSONA_idPERSONA = persona.idPERSONA INNER JOIN persona_rol ON persona_rol.PERSONA_idPERSONA = persona.idPERSONA INNER JOIN rol ON persona_rol.ROL_idROL = rol.idROL WHERE persona_rol.ROL_idROL = 3 AND curso_persona.CURSO_idCURSO = '"+id+"'");
         }
 
         public DataTable consultarDocenteCurso(string id)
@@ -76,7 +76,7 @@ namespace AICF.Modelos
 
         public DataTable ConsultarEstudianteCursoDocumento(string documento)
         {
-            return con.ConsultarDatos("SELECT CONCAT(nombPERSONA,' ', apelPERSONA) AS nombre, docuPERSONA, nombCURSO FROM curso INNER JOIN curso_persona ON curso_persona.CURSO_idCURSO = curso.idCURSO INNER JOIN persona ON curso_persona.PERSONA_idPERSONA = persona.idPERSONA INNER JOIN persona_rol ON persona_rol.PERSONA_idPERSONA = persona.idPERSONA INNER JOIN rol ON persona_rol.ROL_idROL = rol.idROL WHERE persona_rol.ROL_idROL = 3 AND persona.docuPERSONA='"+documento+"'");
+            return con.ConsultarDatos("SELECT CONCAT(nombPERSONA,' ', apelPERSONA) AS nombre, docuPERSONA, nombCURSO, idCURSO FROM curso INNER JOIN curso_persona ON curso_persona.CURSO_idCURSO = curso.idCURSO INNER JOIN persona ON curso_persona.PERSONA_idPERSONA = persona.idPERSONA INNER JOIN persona_rol ON persona_rol.PERSONA_idPERSONA = persona.idPERSONA INNER JOIN rol ON persona_rol.ROL_idROL = rol.idROL WHERE persona_rol.ROL_idROL = 3 AND persona.docuPERSONA='"+documento+"'");
         }
     }
 }

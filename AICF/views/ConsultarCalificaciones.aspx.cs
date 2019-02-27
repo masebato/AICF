@@ -38,13 +38,11 @@ namespace AICF.views
                 NombreEstudiante.Text = estudiante.Rows[0]["nombre"].ToString();
                 Documento.Text = estudiante.Rows[0]["docuPERSONA"].ToString();
                 Curso.Text = estudiante.Rows[0]["nombCURSO"].ToString();
-
                 calificacionesEStudiante.DataSource = obj_calificacion.ConsultarCalificacionEstudiante(Documento.Text);
                 calificacionesEStudiante.DataBind();
             }
             catch (Exception)
             {
-
                 throw;
             }           
         }
