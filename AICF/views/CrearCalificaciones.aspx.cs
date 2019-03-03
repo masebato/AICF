@@ -32,6 +32,7 @@ namespace AICF.views
                 string idAsignatura = Convert.ToString(Request.QueryString["idasignatura"]);
                 string docente = Convert.ToString(Request.QueryString["profesor"]);
                 string cursonombre = Convert.ToString(Request.QueryString["nombrecurso"]);
+                idasignaturalabel.Text = idAsignatura;
                 NombreCurso.Text = cursonombre;
                 Profesor.Text = docente;
                 calif = new Calificacion();
@@ -48,8 +49,25 @@ namespace AICF.views
 
         protected void Unnamed_Click(object sender, EventArgs e)
         {
+            try
+            {
+                calif = new Calificacion();
+                if (calif.Insertarcalificacion(Calificacion.SelectedValue, idasignaturalabel.Text, Estudiantes.SelectedValue, valor.Text))
+                {
+                    Calificacion.SelectedValue = "0";
+                    idasignaturalabel.Text = "";
+                    Estudiantes.SelectedValue = "0";
+                    valor.Text = "";
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "pop", "swal(' REGISTRADO', '', 'success');", true);
+                }
 
-            calif = new Calificacion();
+            }
+            catch (Exception)
+            {
+
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "pop", "swal('OCURRIO UN ERROR', '', 'error');", true);
+            }
+                   
 
         }
 

@@ -96,9 +96,11 @@
     <Content Include="views\assets\img\faces\kaci-baum-1.jpg" />
     <Content Include="views\assets\img\faces\kaci-baum-2.jpg" />
     <Content Include="views\assets\img\favicon.png" />
+    <Content Include="views\assets\img\fondoGenerico.png.jpg" />
     <Content Include="views\assets\img\header.jpg" />
     <Content Include="views\assets\img\jan-sendereks.jpg" />
     <Content Include="views\assets\img\logo-small.png" />
+    <Content Include="views\assets\img\logo.jpg" />
     <Content Include="views\assets\img\mike.jpg" />
     <Content Include="views\assets\js\core\bootstrap.min.js" />
     <Content Include="views\assets\js\core\jquery.min.js" />
@@ -111,6 +113,7 @@
     <Content Include="views\ConsultarCalificaciones.aspx" />
     <Content Include="views\ConsultarCurso.aspx" />
     <Content Include="views\ConsultarCursoDetalle.aspx" />
+    <Content Include="views\ConsultarCursoEstudiante.aspx" />
     <Content Include="views\ConsultarCursosDocente.aspx" />
     <Content Include="views\CrearAsignatura.aspx" />
     <Content Include="views\CrearCalificaciones.aspx" />
@@ -175,6 +178,13 @@
     </Compile>
     <Compile Include="views\ConsultarCursoDetalle.aspx.designer.cs">
       <DependentUpon>ConsultarCursoDetalle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="views\ConsultarCursoEstudiante.aspx.cs">
+      <DependentUpon>ConsultarCursoEstudiante.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="views\ConsultarCursoEstudiante.aspx.designer.cs">
+      <DependentUpon>ConsultarCursoEstudiante.aspx</DependentUpon>
     </Compile>
     <Compile Include="views\ConsultarCursosDocente.aspx.cs">
       <DependentUpon>ConsultarCursosDocente.aspx</DependentUpon>

@@ -76,5 +76,9 @@ namespace AICF.Modelos
         {
             return con.ConsultarDatos("SELECT nombCURSO, jornCURSO, idCURSO, CONCAT(nombPERSONA,' ', apelPERSONA) AS nombre, docuPERSONA FROM rol inner join persona_rol on persona_rol.ROL_idROL = rol.idROL INNER JOIN  persona ON persona_rol.PERSONA_idPERSONA = persona.idPERSONA INNER JOIN curso_persona on curso_persona.PERSONA_idPERSONA = persona.idPERSONA INNER JOIN curso ON curso_persona.CURSO_idCURSO = curso.idCURSO WHERE persona_rol.PERSONA_idPERSONA = '"+iddocente+"' AND persona_rol.ROL_idROL = 2");
         }
+        public DataTable ConsultarCursoEstudiante(string idestudiante)
+        {
+            return con.ConsultarDatos("SELECT nombCURSO, jornCURSO, idCURSO, CONCAT(nombPERSONA,' ', apelPERSONA) AS nombre, docuPERSONA FROM rol inner join persona_rol on persona_rol.ROL_idROL = rol.idROL INNER JOIN  persona ON persona_rol.PERSONA_idPERSONA = persona.idPERSONA INNER JOIN curso_persona on curso_persona.PERSONA_idPERSONA = persona.idPERSONA INNER JOIN curso ON curso_persona.CURSO_idCURSO = curso.idCURSO WHERE persona_rol.PERSONA_idPERSONA = '"+idestudiante+"' AND persona_rol.ROL_idROL = 3");
+        }
     }    
 }

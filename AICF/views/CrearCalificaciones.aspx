@@ -19,6 +19,7 @@
                             <div class="form-group">
                                 <label>NOMBRE ASIGNATURA</label>
                                 <asp:Label Text="" ID="NombreAsignatura" runat="server" />
+                                 <asp:Label Text="" ID="idasignaturalabel" Visible="false" runat="server" />
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -33,7 +34,7 @@
                                 <div class="form-group">
                                     <label>Estudiantes</label>
                                   <asp:DropDownList runat="server" CssClass="form-control" id="Estudiantes" AppendDataBoundItems="true" required >                                       
-                                        <asp:ListItem Text="Seleccione"  Enabled="true"/>
+                                        <asp:ListItem Text="Seleccione" Value="0"  Enabled="true"/>
                                     </asp:DropDownList>
                                 </div>
                             </div>
@@ -41,7 +42,7 @@
                                 <div class="form-group">
                                      <label>Calificacion</label>
                                     <asp:DropDownList runat="server" CssClass="form-control" id="Calificacion" AppendDataBoundItems="true" required >                                       
-                                        <asp:ListItem Text="Seleccione"  Enabled="true"/>
+                                        <asp:ListItem Text="Seleccione" value="0" Enabled="true"/>
                                     </asp:DropDownList>
                                 </div>
                             </div>
